@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Rasa Kita</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8f0;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        header {
+            background: #5a3825;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffc857;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 450px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 8%;
+            background: linear-gradient(135deg, #fff0d5, #ffe2b8);
+        }
+
+        .hero-text {
+            max-width: 550px;
+        }
+
+        .hero-text h1 {
+            font-size: 50px;
+            color: #5a3825;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #c85f0c;
+        }
+
+        .hero-icon {
+            font-size: 150px;
+        }
+
+        /* PRODUK */
+        .produk {
+            padding: 60px 8%;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .judul h2 {
+            font-size: 35px;
+            color: #5a3825;
+        }
+
+        .judul p {
+            margin-top: 10px;
+            color: #777;
+        }
+
+        .produk-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .gambar {
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+            background: #f7e2c5;
+        }
+
+        .card-content {
+            padding: 22px;
+        }
+
+        .card-content h3 {
+            color: #5a3825;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            color: #777;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .harga {
+            color: #e67e22;
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .beli {
+            display: block;
+            text-align: center;
+            background: #5a3825;
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .beli:hover {
+            background: #e67e22;
+        }
+
+        /* TENTANG */
+        .tentang {
+            padding: 60px 8%;
+            background: #5a3825;
+            color: white;
+            text-align: center;
+        }
+
+        .tentang h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .tentang p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+            color: #eee;
+        }
+
+        /* KONTAK */
+        .kontak {
+            padding: 50px 8%;
+            text-align: center;
+            background: #fff8f0;
+        }
+
+        .kontak h2 {
+            color: #5a3825;
+            margin-bottom: 15px;
+        }
+
+        .kontak p {
+            margin: 8px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #332015;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .hero-icon {
+                font-size: 100px;
+                margin-top: 25px;
+            }
+
+            .produk-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+
+        <div class="logo">
+            🍴 Rasa Kita
+        </div>
+
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#produk">Produk</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+    </header>
+
+
+    <!-- BERANDA -->
+    <section class="hero" id="beranda">
+
+        <div class="hero-text">
+
+            <h1>
+                Selamat Datang di Rasa Kita
+            </h1>
+
+            <p>
+                Nikmati berbagai makanan dan buah pilihan
+                dengan rasa lezat, kualitas terbaik, dan harga
+                yang ramah di kantong.
+            </p>
+
+            <a href="#produk" class="btn">
+                Lihat Produk
+            </a>
+
+        </div>
+
+        <div class="hero-icon">
+            🍽️
+        </div>
+
+    </section>
+
+
+    <!-- PRODUK -->
+    <section class="produk" id="produk">
+
+        <div class="judul">
+
+            <h2>
+                Produk Pilihan
+            </h2>
+
+            <p>
+                Pilih makanan favoritmu hari ini!
+            </p>
+
+        </div>
+
+
+        <div class="produk-container">
+
+
+            <!-- MARTABAK -->
+            <div class="card">
+
+                <div class="gambar">
+                    🥞
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Martabak Asin / Telur
+                    </h3>
+
+                    <p>
+                        Martabak telur gurih dengan isian telur,
+                        daging, daun bawang, dan bumbu pilihan.
+                    </p>
+
+                    <div class="harga">
+                        Rp15.000
+                    </div>
+
+                    <a
+                        href="https://wa.me/6285784704886?text=Halo%20saya%20ingin%20memesan%20Martabak%20Asin%2FTelur"
+                        class="beli"
+                        target="_blank">
+                        Beli Sekarang
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DURIAN -->
+            <div class="card">
+
+                <div class="gambar">
+                    🥭
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Buah Durian
+                    </h3>
+
+                    <p>
+                        Durian pilihan dengan aroma khas,
+                        tekstur lembut, dan rasa yang manis.
+                    </p>
+
+                    <div class="harga">
+                        Rp35.000
+                    </div>
+
+                    <a
+                        href="https://wa.me/6285784704886?text=Halo%20saya%20ingin%20memesan%20Buah%20Durian"
+                        class="beli"
+                        target="_blank">
+                        Beli Sekarang
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOCHI -->
+            <div class="card">
+
+                <div class="gambar">
+                    🍡
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Mochi
+                    </h3>
+
+                    <p>
+                        Mochi lembut dan kenyal dengan berbagai
+                        pilihan rasa yang cocok untuk camilan.
+                    </p>
+
+                    <div class="harga">
+                        Rp10.000
+                    </div>
+
+                    <a
+                        href="https://wa.me/6285784704886?text=Halo%20saya%20ingin%20memesan%20Mochi"
+                        class="beli"
+                        target="_blank">
+                        Beli Sekarang
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TENTANG -->
+    <section class="tentang" id="tentang">
+
+        <h2>
+            Tentang Rasa Kita
+        </h2>
+
+        <p>
+            Rasa Kita adalah toko makanan sederhana yang menyediakan
+            berbagai makanan dan buah pilihan. Kami mengutamakan
+            rasa yang enak, kualitas produk, dan pelayanan terbaik
+            untuk pelanggan.
+        </p>
+
+    </section>
+
+
+    <!-- KONTAK -->
+    <section class="kontak" id="kontak">
+
+        <h2>
+            Hubungi Kami
+        </h2>
+
+        <p>
+            📱 WhatsApp: 081234567890
+        </p>
+
+        <p>
+            📍 Alamat: Surabaya, Indonesia
+        </p>
+
+        <p>
+            📧 Email: rasakita@gmail.com
+        </p>
+
+        <br>
+
+        <a
+            href="https://wa.me/6285784704886?text=Halo%20Rasa%20Kita%2C%20saya%20ingin%20memesan%20produk"
+            class="btn"
+            target="_blank">
+            📱 Pesan Sekarang
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Rasa Kita | Toko Makanan & Buah
+        </p>
+
+    </footer>
+
+</body>
+</html>
